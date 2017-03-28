@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iiubuju.github.io/blog">
-  <title>blog</title>
+  <title>创建对象 - 构造函数模式 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="https://iiubuju.github.io/blog/index.html">
+  <meta name="description" content="构造函数可以用来创建特定类型的对象。这就解决了工厂模式的不足之处。
+1234567891011121314151617// 构造函数function Person(name, age, job)&amp;#123;  this.name = name;  this.age = age;  this.job = job;  this.sayName = function()&amp;#123;    alet(th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建对象 - 构造函数模式">
+<meta property="og:url" content="https://iiubuju.github.io/blog/2017/03/28/study-pattern-constructor/index.html">
 <meta property="og:site_name" content="blog">
+<meta property="og:description" content="构造函数可以用来创建特定类型的对象。这就解决了工厂模式的不足之处。
+1234567891011121314151617// 构造函数function Person(name, age, job)&amp;#123;  this.name = name;  this.age = age;  this.job = job;  this.sayName = function()&amp;#123;    alet(th">
+<meta property="og:updated_time" content="2017-03-28T15:46:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog">
+<meta name="twitter:title" content="创建对象 - 构造函数模式">
+<meta name="twitter:description" content="构造函数可以用来创建特定类型的对象。这就解决了工厂模式的不足之处。
+1234567891011121314151617// 构造函数function Person(name, age, job)&amp;#123;  this.name = name;  this.age = age;  this.job = job;  this.sayName = function()&amp;#123;    alet(th">
   
     <link rel="alternative" href="/atom.xml" title="blog" type="application/atom+xml">
   
@@ -145,122 +152,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-object-defineProperty" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-study-pattern-constructor" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/28/object-defineProperty/">Object.defineProperty</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2017/03/28/object-defineProperty/" class="archive-article-date">
-  	<time datetime="2017-03-28T15:48:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>该方法只在ES5上的现代浏览器被支持，描述了对象属性的各种特征。<br>ECMAScript中有两种属性：数据属性、访问器属性</p>
-<h3 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h3><p>包含一个数据值的位置，这个位置可以读取和写入值，数据属性有4个描述行为的特性：</p>
-<ul>
-<li>[[Configurable]]：表示<ul>
-<li>能否通过delete操作符删除属性，从而重新定义属性；</li>
-<li>能否修改属性的特性；</li>
-<li>能否把属性修改为访问器属性；</li>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Enumberable]]：表示能否通过for-in循环返回属性<ul>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Writable]]：表示能否修改属性的值<ul>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Value]]：包含这个属性的数据值<ul>
-<li>直接在对象上定义的属性，默认为undefined；</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>注意：一旦把属性的configurable设置为false后，就再也不能变回可配置了。</p>
-</blockquote>
-<h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><p>不包含数据值，包含一对getter和setter函数，读取和设置时分别会调用相应的函数。</p>
-<ul>
-<li>[[Configurable]]：表示<ul>
-<li>能否通过delete操作符删除属性，从而重新定义属性；</li>
-<li>能否修改属性的特性；</li>
-<li>能否把属性修改为访问器属性；</li>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Enumberable]]：表示能否通过for-in循环返回属性<ul>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Getter]]：读取属性时调用的函数，默认值为undefined；</li>
-<li>[[Setter]]：设置属性时调用的函数，默认值为undefined；</li>
-</ul>
-<blockquote>
-<p>注意：不一定非要同时指定getter和setter，只指定getter时，表示属性是不可读的、只指定setter时，表示属性是不可写的。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2017/03/28/object-defineProperty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-study-pattern-constructor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/28/study-pattern-constructor/">创建对象 - 构造函数模式</a>
+    <h1 class="article-title" itemprop="name">
+      创建对象 - 构造函数模式
     </h1>
   
 
@@ -297,71 +196,26 @@
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2017/03/28/study-pattern-constructor/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-study-pattern-factory" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/28/study-pattern-factory/">创建对象 - 工厂模式</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2017/03/28/study-pattern-factory/" class="archive-article-date">
-  	<time datetime="2017-03-28T15:42:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这种模式抽象了创建具体对象的过程，在ECMAScript中无法创建类，开发人员发明了一种函数，用函数来封装了以特定接口创建对象的细节。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function createPerson(name, age, job)&#123;</div><div class="line">  var o = new Object();</div><div class="line">  o.name = name;</div><div class="line">  o.age = age;</div><div class="line">  o.job = job;</div><div class="line"></div><div class="line">  o.sayName = function()&#123;</div><div class="line">    alert(this.name); //this的指向，取决于该函数被调用时的上下文环境</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return o;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>调用createPerson函数，能够根据参数来构建一个包含三个属性，一个方法的对象。<br>工厂模式解决了创建多个相似对象的问题，<font color="red">但是没有解决对象识别的问题</font></p>
-<h3 id="工厂模式的问题"><a href="#工厂模式的问题" class="headerlink" title="工厂模式的问题"></a>工厂模式的问题</h3><p>怎么识别一个对象？怎么知道一个对象的类型？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var henryObj = createPerson(&apos;henry&apos;, &apos;31&apos;, &apos;Coder&apos;);</div><div class="line">typeof henryObj; // object</div><div class="line">henryObject instanceof Object; // true</div></pre></td></tr></table></figure>
-
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -381,100 +235,83 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2017/03/28/study-pattern-factory/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://iiubuju.github.io/blog/2017/03/28/study-pattern-constructor/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
-
-
-
   
-    <article id="post-study-closure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/blog/2017/03/28/object-defineProperty/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/28/study-closure/">闭包</a>
-    </h1>
-  
-
+          Object.defineProperty
         
-        <a href="/blog/2017/03/28/study-closure/" class="archive-article-date">
-  	<time datetime="2017-03-28T15:33:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先要理解Javascript中变量的作用域，无非就是两种：全局变量、局部变量</p>
-<p>Javascript中的特殊之处在于：</p>
-<ul>
-<li>函数内部可以直接读取全局变量；</li>
-<li>函数外部不能访问函数内部的变量；</li>
-</ul>
-<blockquote>
-<p>注意：函数内部声明变量时，一定要带上var，不然就变成全局变量了！</p>
-</blockquote>
-<h3 id="如何在函数外部访问局部变量？"><a href="#如何在函数外部访问局部变量？" class="headerlink" title="如何在函数外部访问局部变量？"></a>如何在函数外部访问局部变量？</h3><p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。</p>
-<p>那就是在函数内部，再定义一个函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function f1()&#123;</div><div class="line">  var n=999;</div><div class="line">  function f2()&#123;</div><div class="line">    alert(n); // 999</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>f2可以访问f1中的变量n，那么f1只要把f2返回，不就可以在外部访问n了么</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function f1()&#123;</div><div class="line">  var n=999;</div><div class="line">  function f2()&#123;</div><div class="line">    alert(n); // 999</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return f2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var result = f1();</div><div class="line">result(); //alert(999)</div></pre></td></tr></table></figure>
-<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><p>上边例子中了f2，就是一个闭包，总而言之：</p>
-<ul>
-<li>闭包是能够读取其他函数内部变量的函数。</li>
-<li>闭包是<code>定义在一个函数内部的函数</code>。</li>
-<li>闭包是连接函数内部和外部的桥梁。</li>
-<li>闭包让函数的局部变量在内存中常驻。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2017/03/28/study-closure/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2017/03/28/study-pattern-factory/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">创建对象 - 工厂模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -482,7 +319,10 @@
 
 
   
+    <div class="duoshuo"></div>
   
+
+
 
 
           </div>
@@ -504,8 +344,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
