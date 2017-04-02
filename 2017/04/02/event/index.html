@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iiubuju.github.io/blog">
-  <title>事件流 | blog</title>
+  <title>DOM事件流 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1. 事件冒泡（bubbling）事件由最具体的元素（文档中嵌套最深的节点），逐级向上传播，直到document
 12345&amp;lt;html&amp;gt;  &amp;lt;body&amp;gt;    &amp;lt;div&amp;gt;Click Me&amp;lt;/div&amp;gt;  &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;
@@ -17,7 +17,7 @@ body
 html
 docume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件流">
+<meta property="og:title" content="DOM事件流">
 <meta property="og:url" content="https://iiubuju.github.io/blog/2017/04/02/event/index.html">
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="1. 事件冒泡（bubbling）事件由最具体的元素（文档中嵌套最深的节点），逐级向上传播，直到document
@@ -28,9 +28,9 @@ div
 body
 html
 docume">
-<meta property="og:updated_time" content="2017-04-02T10:08:53.000Z">
+<meta property="og:updated_time" content="2017-04-02T10:17:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="事件流">
+<meta name="twitter:title" content="DOM事件流">
 <meta name="twitter:description" content="1. 事件冒泡（bubbling）事件由最具体的元素（文档中嵌套最深的节点），逐级向上传播，直到document
 12345&amp;lt;html&amp;gt;  &amp;lt;body&amp;gt;    &amp;lt;div&amp;gt;Click Me&amp;lt;/div&amp;gt;  &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;
 当点击div时，click事件的会按照如下顺序传播：
@@ -78,6 +78,8 @@ docume">
 			<ul>
 			
 				<li><a href="/blog/">主页</a></li>
+	        
+				<li><a href="/blog/tags/javascript/">javascript</a></li>
 	        
 				<li><a href="/blog/tags/javascript/">读书笔记</a></li>
 	        
@@ -133,6 +135,8 @@ docume">
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -150,12 +154,14 @@ docume">
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/blog/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/blog/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/blog/tags/javascript/">读书笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/blog/tags/javascript/">javascript</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/blog/tags/javascript/">读书笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,7 +183,7 @@ docume">
         
   
     <h1 class="article-title" itemprop="name">
-      事件流
+      DOM事件流
     </h1>
   
 
@@ -268,7 +274,7 @@ docume">
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前端事件学习笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
         		</li>
       		
 		</ul>
