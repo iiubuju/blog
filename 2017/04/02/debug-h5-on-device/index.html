@@ -6,39 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iiubuju.github.io/blog">
-  <title>Object.defineProperty | blog</title>
+  <title>在iPhone上调试H5页面 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="该方法只在ES5上的现代浏览器被支持，描述了对象属性的各种特征。ECMAScript中有两种属性：数据属性、访问器属性
-数据属性包含一个数据值的位置，这个位置可以读取和写入值，数据属性有4个描述行为的特性：
-
-[[Configurable]]：表示
-能否通过delete操作符删除属性，从而重新定义属性；
-能否修改属性的特性；
-能否把属性修改为访问器属性；
-直接在对象上定义的属性，默认为true；">
+  <meta name="description" content="H5开发中经常遇到，在Chrome模拟器中页面显示一切正常，但是到了手机端却出现不兼容的情况，这个时候如何调试呢？
+一、iOS + Safari1、手机上设置Safari打开调试通过设置 &amp;gt; Safari &amp;gt; 高级 &amp;gt; Web检查器打开。该选项下面有对电脑操作的相应描述，照做就可以了。
+2.链接电脑（Mac）2.1 先在手机Safari中打开你想调试的网页，并用数据线连接到电脑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object.defineProperty">
-<meta property="og:url" content="https://iiubuju.github.io/blog/2017/03/28/object-defineProperty/index.html">
+<meta property="og:title" content="在iPhone上调试H5页面">
+<meta property="og:url" content="https://iiubuju.github.io/blog/2017/04/02/debug-h5-on-device/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="该方法只在ES5上的现代浏览器被支持，描述了对象属性的各种特征。ECMAScript中有两种属性：数据属性、访问器属性
-数据属性包含一个数据值的位置，这个位置可以读取和写入值，数据属性有4个描述行为的特性：
-
-[[Configurable]]：表示
-能否通过delete操作符删除属性，从而重新定义属性；
-能否修改属性的特性；
-能否把属性修改为访问器属性；
-直接在对象上定义的属性，默认为true；">
-<meta property="og:updated_time" content="2017-03-28T15:48:30.000Z">
+<meta property="og:description" content="H5开发中经常遇到，在Chrome模拟器中页面显示一切正常，但是到了手机端却出现不兼容的情况，这个时候如何调试呢？
+一、iOS + Safari1、手机上设置Safari打开调试通过设置 &amp;gt; Safari &amp;gt; 高级 &amp;gt; Web检查器打开。该选项下面有对电脑操作的相应描述，照做就可以了。
+2.链接电脑（Mac）2.1 先在手机Safari中打开你想调试的网页，并用数据线连接到电脑。">
+<meta property="og:image" content="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-1.jpeg">
+<meta property="og:image" content="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-2.jpeg">
+<meta property="og:image" content="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-3.jpeg">
+<meta property="og:updated_time" content="2017-04-02T10:39:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object.defineProperty">
-<meta name="twitter:description" content="该方法只在ES5上的现代浏览器被支持，描述了对象属性的各种特征。ECMAScript中有两种属性：数据属性、访问器属性
-数据属性包含一个数据值的位置，这个位置可以读取和写入值，数据属性有4个描述行为的特性：
-
-[[Configurable]]：表示
-能否通过delete操作符删除属性，从而重新定义属性；
-能否修改属性的特性；
-能否把属性修改为访问器属性；
-直接在对象上定义的属性，默认为true；">
+<meta name="twitter:title" content="在iPhone上调试H5页面">
+<meta name="twitter:description" content="H5开发中经常遇到，在Chrome模拟器中页面显示一切正常，但是到了手机端却出现不兼容的情况，这个时候如何调试呢？
+一、iOS + Safari1、手机上设置Safari打开调试通过设置 &amp;gt; Safari &amp;gt; 高级 &amp;gt; Web检查器打开。该选项下面有对电脑操作的相应描述，照做就可以了。
+2.链接电脑（Mac）2.1 先在手机Safari中打开你想调试的网页，并用数据线连接到电脑。">
+<meta name="twitter:image" content="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="blog" type="application/atom+xml">
   
@@ -188,71 +177,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-object-defineProperty" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-debug-h5-on-device" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Object.defineProperty
+      在iPhone上调试H5页面
     </h1>
   
 
         
-        <a href="/blog/2017/03/28/object-defineProperty/" class="archive-article-date">
-  	<time datetime="2017-03-28T15:48:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+        <a href="/blog/2017/04/02/debug-h5-on-device/" class="archive-article-date">
+  	<time datetime="2017-04-02T10:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>该方法只在ES5上的现代浏览器被支持，描述了对象属性的各种特征。<br>ECMAScript中有两种属性：数据属性、访问器属性</p>
-<h3 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h3><p>包含一个数据值的位置，这个位置可以读取和写入值，数据属性有4个描述行为的特性：</p>
-<ul>
-<li>[[Configurable]]：表示<ul>
-<li>能否通过delete操作符删除属性，从而重新定义属性；</li>
-<li>能否修改属性的特性；</li>
-<li>能否把属性修改为访问器属性；</li>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Enumberable]]：表示能否通过for-in循环返回属性<ul>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Writable]]：表示能否修改属性的值<ul>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Value]]：包含这个属性的数据值<ul>
-<li>直接在对象上定义的属性，默认为undefined；</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>注意：一旦把属性的configurable设置为false后，就再也不能变回可配置了。</p>
-</blockquote>
-<h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><p>不包含数据值，包含一对getter和setter函数，读取和设置时分别会调用相应的函数。</p>
-<ul>
-<li>[[Configurable]]：表示<ul>
-<li>能否通过delete操作符删除属性，从而重新定义属性；</li>
-<li>能否修改属性的特性；</li>
-<li>能否把属性修改为访问器属性；</li>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Enumberable]]：表示能否通过for-in循环返回属性<ul>
-<li>直接在对象上定义的属性，默认为true；</li>
-</ul>
-</li>
-<li>[[Getter]]：读取属性时调用的函数，默认值为undefined；</li>
-<li>[[Setter]]：设置属性时调用的函数，默认值为undefined；</li>
-</ul>
-<blockquote>
-<p>注意：不一定非要同时指定getter和setter，只指定getter时，表示属性是不可读的、只指定setter时，表示属性是不可写的。</p>
-</blockquote>
+        <p>H5开发中经常遇到，在Chrome模拟器中页面显示一切正常，但是到了手机端却出现不兼容的情况，这个时候如何调试呢？</p>
+<h3 id="一、iOS-Safari"><a href="#一、iOS-Safari" class="headerlink" title="一、iOS + Safari"></a>一、iOS + Safari</h3><h4 id="1、手机上设置Safari打开调试"><a href="#1、手机上设置Safari打开调试" class="headerlink" title="1、手机上设置Safari打开调试"></a>1、手机上设置Safari打开调试</h4><p>通过<code>设置 &gt; Safari &gt; 高级 &gt; Web检查器</code>打开。该选项下面有对电脑操作的相应描述，照做就可以了。</p>
+<h4 id="2-链接电脑（Mac）"><a href="#2-链接电脑（Mac）" class="headerlink" title="2.链接电脑（Mac）"></a>2.链接电脑（Mac）</h4><p>2.1 先在手机Safari中打开你想调试的网页，并用数据线连接到电脑。</p>
+<p><img src="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-1.jpeg" alt=""></p>
+<p>2.2 再在电脑上打开Safari点击【Develop】菜单，就会看到如下图所示：</p>
+<p><img src="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-2.jpeg" alt=""></p>
+<p>3.3 点击2.2中的网站名就会在电脑上打开Safari的控制台，如下图：</p>
+<p><img src="http://ons2v8h0a.bkt.clouddn.com/debug-h5-on-device-3.jpeg" alt=""></p>
+<h4 id="3-调试网页"><a href="#3-调试网页" class="headerlink" title="3.调试网页"></a>3.调试网页</h4><p>此时你可以查看H5页面在手机上的DOM结构、CSS样式等。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.cnblogs.com/zhoujg/p/4386611.html" target="_blank" rel="external">http://www.cnblogs.com/zhoujg/p/4386611.html</a></p>
 
       
 
@@ -287,7 +241,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端杂记</a>
         		</li>
       		
 		</ul>
@@ -343,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://iiubuju.github.io/blog/2017/03/28/object-defineProperty/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://iiubuju.github.io/blog/2017/04/02/debug-h5-on-device/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,18 +311,9 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2017/04/02/throttle/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          节流函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2017/03/28/study-pattern-constructor/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">创建对象 - 构造函数模式</div>
+    <a href="/blog/2017/04/02/event/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM事件流</div>
       <i class="icon-circle-right"></i>
     </a>
   
