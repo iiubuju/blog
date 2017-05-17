@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://iiubuju.github.io/blog">
-  <title>webpack - 拆分bundle | blog</title>
+  <title>codewars - 求除数 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个大型应用，所有js代码都放在一个bundle中时效率会受到影响，webpack可以将代码分离在不同的文件中，特别是一些在某些情况下才需要的代码，可以在它们被使用时才加载。
-使用require.ensure来告诉webpack，哪个文件需要被编译进单独的文件中。
-1234567// main.jsrequire.ensure([&amp;apos;./a&amp;apos;], function(require">
+  <meta name="description" content="题目Create a function named divisors that takes an integer and returns an array with all of the integer’s divisors(except for 1 and the number itself). If the number is prime return the string ‘(integer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack - 拆分bundle">
-<meta property="og:url" content="https://iiubuju.github.io/blog/2017/04/02/study-webpack-split-bundle/index.html">
+<meta property="og:title" content="codewars - 求除数">
+<meta property="og:url" content="https://iiubuju.github.io/blog/2017/04/04/codewars-2/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="一个大型应用，所有js代码都放在一个bundle中时效率会受到影响，webpack可以将代码分离在不同的文件中，特别是一些在某些情况下才需要的代码，可以在它们被使用时才加载。
-使用require.ensure来告诉webpack，哪个文件需要被编译进单独的文件中。
-1234567// main.jsrequire.ensure([&amp;apos;./a&amp;apos;], function(require">
-<meta property="og:updated_time" content="2017-04-04T06:50:42.000Z">
+<meta property="og:description" content="题目Create a function named divisors that takes an integer and returns an array with all of the integer’s divisors(except for 1 and the number itself). If the number is prime return the string ‘(integer">
+<meta property="og:updated_time" content="2017-04-04T14:13:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack - 拆分bundle">
-<meta name="twitter:description" content="一个大型应用，所有js代码都放在一个bundle中时效率会受到影响，webpack可以将代码分离在不同的文件中，特别是一些在某些情况下才需要的代码，可以在它们被使用时才加载。
-使用require.ensure来告诉webpack，哪个文件需要被编译进单独的文件中。
-1234567// main.jsrequire.ensure([&amp;apos;./a&amp;apos;], function(require">
+<meta name="twitter:title" content="codewars - 求除数">
+<meta name="twitter:description" content="题目Create a function named divisors that takes an integer and returns an array with all of the integer’s divisors(except for 1 and the number itself). If the number is prime return the string ‘(integer">
   
     <link rel="alternative" href="/atom.xml" title="blog" type="application/atom+xml">
   
@@ -167,32 +161,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-study-webpack-split-bundle" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-codewars-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      webpack - 拆分bundle
+      codewars - 求除数
     </h1>
   
 
         
-        <a href="/blog/2017/04/02/study-webpack-split-bundle/" class="archive-article-date">
-  	<time datetime="2017-04-02T10:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
+        <a href="/blog/2017/04/04/codewars-2/" class="archive-article-date">
+  	<time datetime="2017-04-04T13:57:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一个大型应用，所有js代码都放在一个bundle中时效率会受到影响，webpack可以将代码分离在不同的文件中，特别是一些在某些情况下才需要的代码，可以在它们被使用时才加载。</p>
-<p>使用require.ensure来告诉webpack，哪个文件需要被编译进单独的文件中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// main.js</div><div class="line">require.ensure([&apos;./a&apos;], function(require) &#123;</div><div class="line">  var content = require(&apos;./a&apos;);</div><div class="line">  document.open();</div><div class="line">  document.write(&apos;&lt;h1&gt;&apos; + content + &apos;&lt;/h1&gt;&apos;);</div><div class="line">  document.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>webpack会管理这些文件的依赖和加载，不需要在html中写其它额外的代码。</p>
-<p>运行webpack命令时，会编译出两个文件<code>main.js-&gt;bundle.js</code>和<code>a.js-&gt;1.bundle.js</code>，并且只有在需要时，<code>bundle.js</code>才会加载<code>1.bundle.js</code></p>
-<p>可以将<code>require.ensure</code>代码注释，再运行观察，当代码中没有<code>require.ensure</code>时，浏览器不会下载<code>1.bundle.js</code></p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Create a function named divisors that takes an integer and returns an array with all of the integer’s divisors(except for 1 and the number itself). If the number is prime return the string ‘(integer) is prime’.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">divisors(12); //should return [2,3,4,6]</div><div class="line">divisors(25); //should return [5]</div><div class="line">divisors(13); //should return &quot;13 is prime&quot;</div></pre></td></tr></table></figure>
+<p>You can assume that you will only get positive integers as inputs.</p>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function divisors(integer) &#123;</div><div class="line">  var divisors = [];</div><div class="line">  for(var i = 2; i &lt; integer; i++)&#123;</div><div class="line">    var test = ((integer / i) + &apos;&apos;).indexOf(&apos;.&apos;) &lt;= 0;</div><div class="line"></div><div class="line">    if (test) &#123;</div><div class="line">      divisors.push(i);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return divisors.length ? divisors : integer + &apos; is prime&apos;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="Other-Solution"><a href="#Other-Solution" class="headerlink" title="Other Solution"></a>Other Solution</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function divisors(integer) &#123;</div><div class="line">  var res = [];</div><div class="line"></div><div class="line">  for (var i = 2, l = integer / 2; i &lt;= l; ++i) &#123;</div><div class="line">    if (integer % i == 0) res.push(i);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return res.length ? res : integer + &apos; is prime&apos;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>只需要循环<code>integer/2</code>次<br>用求模<code>%</code>替代<code>/</code><br>Orz</p>
 
       
 
@@ -222,17 +216,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -283,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://iiubuju.github.io/blog/2017/04/02/study-webpack-split-bundle/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://iiubuju.github.io/blog/2017/04/04/codewars-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +280,9 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2017/04/02/study-webpack-bundle-loader/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack - bundle-loader
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2017/04/02/study-webpack-plugin-uglifyJs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webpack - uglifyJs插件</div>
+    <a href="/blog/2017/04/04/codewars-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">codewars - 字符串脱敏</div>
       <i class="icon-circle-right"></i>
     </a>
   
